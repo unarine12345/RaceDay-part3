@@ -1,0 +1,2 @@
+@model List<EventForm>
+<h1>Organiser dashboard</h1><a class="btn btn-race mb-3" href="/Organiser/CreateEvent">Create event</a><div class="row g-3">@foreach(var e in Model){<div class="col-md-6"><div class="card p-3"><h4>@e.Name</h4><p>@e.EventDate.ToString("dd MMM yyyy") • @e.Location • @e.Distance km</p><form method="post" action="/Organiser/Delete"><input type="hidden" name="id" value="@e.EventId"/><button class="btn btn-outline-danger btn-sm">Delete</button></form></div></div>}</div>

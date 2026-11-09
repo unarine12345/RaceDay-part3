@@ -1,0 +1,3 @@
+@using System.Text.Json
+@model List<JsonElement>
+<h1>Available events</h1>@foreach(var e in Model){var id=e.GetProperty("eventId").GetInt32();<div class="card p-3 mb-3"><h3>@e.GetProperty("name").GetString()</h3><p>@e.GetProperty("location").GetString() • @e.GetProperty("eventDate").ToString()</p><form method="post" action="/Participant/Enrol"><input type="hidden" name="id" value="@id"/><input name="categoryId" type="number" min="1" placeholder="Category ID" class="form-control mb-2" required/><button class="btn btn-race">Enrol</button></form></div>}

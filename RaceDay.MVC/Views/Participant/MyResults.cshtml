@@ -1,0 +1,3 @@
+@using System.Text.Json
+@model List<JsonElement>
+<h1>My results</h1><table class="table"><tr><th>Event</th><th>Time</th><th>Position</th></tr>@foreach(var r in Model){<tr><td>@r.GetProperty("event").GetString()</td><td>@r.GetProperty("finishTime").ToString()</td><td>@r.GetProperty("finishingPosition").ToString()</td></tr>}</table>

@@ -1,0 +1,3 @@
+@using System.Text.Json
+@model List<JsonElement>
+<h1>My enrolments</h1><ul class="list-group">@foreach(var e in Model){<li class="list-group-item">@e.GetProperty("event").GetString() — @e.GetProperty("category").GetString() — @(e.GetProperty("result").ValueKind==JsonValueKind.Null?"Awaiting result":"Result published")</li>}</ul>

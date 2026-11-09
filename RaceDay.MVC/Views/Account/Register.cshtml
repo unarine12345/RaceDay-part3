@@ -1,0 +1,2 @@
+@model RegisterForm
+<h2>Create your RaceDay account</h2><div asp-validation-summary="All" class="text-danger"></div><form method="post" class="panel">@foreach(var field in new[]{"FirstName","LastName","Email","Password"}){<label>@field</label><input name="@field" type="@(field=="Password"?"password":"text")" class="form-control mb-2" required/>}<label>Role</label><select asp-for="Role" class="form-select mb-3"><option>Participant</option><option>Organiser</option></select><button class="btn btn-race">Register</button></form>
